@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="defaultPU" transaction-type="RESOURCE_LOCAL">
+        <class>jpawitheclipselink.entity.InsertToMillionRowsTable2</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.0.20:1521:XE" />
+            <property name="javax.persistence.jdbc.user" value="kagamihoge" />
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+            <property name="javax.persistence.jdbc.password" value="xxxx" />
+
+            <!-- http://www.eclipse.org/eclipselink/documentation/2.5/jpa/extensions/p_jdbc_batchwriting.htm#CIHIAGAF -->
+            <property name="eclipselink.jdbc.batch-writing" value="jdbc" />
+            <!-- http://www.eclipse.org/eclipselink/documentation/2.5/jpa/extensions/p_jdbc_batchwritingsize.htm#CIHJADHF -->
+            <property name="eclipselink.jdbc.batch-writing.size" value="100" />
+        </properties>
+    </persistence-unit>
+</persistence>
